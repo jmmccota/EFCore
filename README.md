@@ -7,7 +7,7 @@
 
 Databases Mysql and Sqlite(default)
 
-Swagger at localhost:<port>/swagger
+Swagger at localhost:\<port\>/swagger
 
 Enjoy!
 
