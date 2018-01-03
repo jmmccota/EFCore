@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "64ae797894d61ed7ed2a"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "9cccf7fefa705cb28b54"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -1974,7 +1974,7 @@ exports = module.exports = __webpack_require__(59)(undefined);
 
 
 // module
-exports.push([module.i, "body {\n  margin: 0;\n  padding: 0;\n  font-family: sans-serif;\n}\n", ""]);
+exports.push([module.i, "body {\r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: sans-serif;\r\n}\r\n", ""]);
 
 // exports
 
@@ -2088,7 +2088,7 @@ exports = module.exports = __webpack_require__(59)(undefined);
 
 
 // module
-exports.push([module.i, ".App {\n  text-align: center;\n}\n\n.App-logo {\n  animation: App-logo-spin infinite 20s linear;\n  height: 80px;\n}\n\n.App-header {\n  background-color: #222;\n  height: 150px;\n  padding: 20px;\n  color: white;\n}\n\n.App-title {\n  font-size: 1.5em;\n}\n\n.App-intro {\n  font-size: large;\n}\n\n@keyframes App-logo-spin {\n  from { transform: rotate(0deg); }\n  to { transform: rotate(360deg); }\n}\n", ""]);
+exports.push([module.i, ".App {\r\n  text-align: center;\r\n}\r\n\r\n.App-logo {\r\n  animation: App-logo-spin infinite 20s linear;\r\n  height: 80px;\r\n}\r\n\r\n.App-header {\r\n  background-color: #222;\r\n  height: 150px;\r\n  padding: 20px;\r\n  color: white;\r\n}\r\n\r\n.App-title {\r\n  font-size: 1.5em;\r\n}\r\n\r\n.App-intro {\r\n  font-size: large;\r\n}\r\n\r\n@keyframes App-logo-spin {\r\n  from { transform: rotate(0deg); }\r\n  to { transform: rotate(360deg); }\r\n}\r\n", ""]);
 
 // exports
 
@@ -9743,15 +9743,19 @@ var App = function (_Component) {
             retorno: ""
         }, _this.listar = function () {
             _axios2.default.get("api/Teste/ListarTodos").then(function (response) {
-                return console.log(response.data);
+                return _this.setState({ retorno: JSON.stringify(response.data, null, 2) });
             });
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
     _createClass(App, [{
+        key: "componentWillMount",
+        value: function componentWillMount() {
+            this.listar();
+        }
+    }, {
         key: "render",
         value: function render() {
-            this.listar();
             return _react2.default.createElement(
                 "div",
                 { className: "App" },
@@ -9781,7 +9785,12 @@ var App = function (_Component) {
                     _extends({ valorInicial: 4 }, this.props),
                     "teste"
                 ),
-                _react2.default.createElement(_BotaoContador2.default, { valorInicial: "1" })
+                _react2.default.createElement(_BotaoContador2.default, { valorInicial: "1" }),
+                _react2.default.createElement(
+                    "pre",
+                    null,
+                    this.state.retorno
+                )
             );
         }
     }]);
@@ -10755,7 +10764,7 @@ exports.default = BotaoContador;
 /* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "5d5d9eefa31e5e13a6610d9fa7a283bb.svg";
+module.exports = __webpack_require__.p + "ee7cd8ed2dcec943251eb2763684fc6f.svg";
 
 /***/ }),
 /* 214 */

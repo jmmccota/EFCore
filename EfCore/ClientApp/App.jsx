@@ -6,13 +6,15 @@ import './App.css';
 
 class App extends Component {
     state = {
-        retorno : "",
+        retorno: "",
     };
     listar = () => {
-        axios.get("api/Teste/ListarTodos").then((response) => console.log(response.data));
+        axios.get("api/Teste/ListarTodos").then((response) => this.setState({ retorno: JSON.stringify(response.data, null, 2) }));
+    }
+    componentWillMount() {
+        this.listar();
     }
     render() {
-        this.listar();
         return (
             <div className="App">
                 <header className="App-header">
@@ -24,6 +26,7 @@ class App extends Component {
                 </p>
                 <BotaoContador valorInicial={4} {...this.props}>teste</BotaoContador>
                 <BotaoContador valorInicial="1" />
+                <pre>{this.state.retorno}</pre>
             </div>
         );
     }
