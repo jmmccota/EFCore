@@ -12,8 +12,8 @@ Swagger at localhost:\<port\>/swagger
 
 ## Steps for running on command line
 
-- git clone
-- cd EFCore
+- git clone https://github.com/jmmccota/EFCore.git
+- cd EFCore/EFCore/
 - ./dotnet restore
 - ./npm install
 - dotnet run
